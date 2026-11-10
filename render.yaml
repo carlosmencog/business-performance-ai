@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: business-performance-ai
+    runtime: docker
+    healthCheckPath: /api/health
+    envVars:
+      - key: DATABASE_URL
+        value: sqlite:///./data/business_performance.db
+
+# Demo-only Blueprint. For persistent production data, use managed PostgreSQL
+# rather than relying on an ephemeral SQLite file.
